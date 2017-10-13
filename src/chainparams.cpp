@@ -50,7 +50,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Blockchain by example 2017.";
+    const char* pszTimestamp = "Blockchain by Example 2017";
     const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -75,7 +75,7 @@ public:
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x7c52fe456e92fb819df84bf07a7ab0e5af2e9f6e304d4cdd262474430a984fb");
+        consensus.BIP34Hash = uint256S("0x00000000d68bffaff19a02ea506922a53e0187ce7f5764a12c5485710474fb1f");
         consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
@@ -106,10 +106,10 @@ public:
         nMaxTipAge = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1505697622, 2083339809, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1507318315, 1133236893, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x7c52fe456e92fb819df84bf07a7ab0e5af2e9f6e304d4cdd262474430a984fb"));
-        assert(genesis.hashMerkleRoot == uint256S("0xe40f564f244258eca3a92f070a823869f7b83fb2c15991f8ea774e99ef2f629c"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000d68bffaff19a02ea506922a53e0187ce7f5764a12c5485710474fb1f"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf9c3d470aa6afece4ded03865c64b16beb8f6c234f6ec9da11b92ccee727044d"));
 
        /* vSeeds.push_back(CDNSSeedData("bitcoin.sipa.be", "seed.bitcoin.sipa.be")); // Pieter Wuille
         vSeeds.push_back(CDNSSeedData("bluematt.me", "dnsseed.bluematt.me")); // Matt Corallo
@@ -134,7 +134,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 11111, uint256S("0x7c52fe456e92fb819df84bf07a7ab0e5af2e9f6e304d4cdd262474430a984fb")),
+            ( 11111, uint256S("0x00000000d68bffaff19a02ea506922a53e0187ce7f5764a12c5485710474fb1f")),
             1505697622, // * UNIX timestamp of last checkpoint block
             0,   // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
@@ -156,7 +156,7 @@ public:
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x7c52fe456e92fb819df84bf07a7ab0e5af2e9f6e304d4cdd262474430a984fb");
+        consensus.BIP34Hash = uint256S("0x00000000d68bffaff19a02ea506922a53e0187ce7f5764a12c5485710474fb1f");
         consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
@@ -182,10 +182,10 @@ public:
         nMaxTipAge = 0x7fffffff;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1505697622, 2083339809, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1507318315, 1133236893 , 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x7c52fe456e92fb819df84bf07a7ab0e5af2e9f6e304d4cdd262474430a984fb"));
-        assert(genesis.hashMerkleRoot == uint256S("0xe40f564f244258eca3a92f070a823869f7b83fb2c15991f8ea774e99ef2f629c"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000d68bffaff19a02ea506922a53e0187ce7f5764a12c5485710474fb1f"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf9c3d470aa6afece4ded03865c64b16beb8f6c234f6ec9da11b92ccee727044d"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -209,7 +209,7 @@ public:
 
       checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 11111, uint256S("0x7c52fe456e92fb819df84bf07a7ab0e5af2e9f6e304d4cdd262474430a984fb")),
+            ( 11111, uint256S("0x00000000d68bffaff19a02ea506922a53e0187ce7f5764a12c5485710474fb1f")),
             1505697622, // * UNIX timestamp of last checkpoint block
             0,   // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
@@ -257,8 +257,8 @@ public:
 
         genesis = CreateGenesisBlock(1505697622, 2, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x7c52fe456e92fb819df84bf07a7ab0e5af2e9f6e304d4cdd262474430a984fb"));
-        assert(genesis.hashMerkleRoot == uint256S("0xe40f564f244258eca3a92f070a823869f7b83fb2c15991f8ea774e99ef2f629c"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000d68bffaff19a02ea506922a53e0187ce7f5764a12c5485710474fb1f"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf9c3d470aa6afece4ded03865c64b16beb8f6c234f6ec9da11b92ccee727044d"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.
@@ -271,7 +271,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206")),
+            ( 0, uint256S("0x00000000d68bffaff19a02ea506922a53e0187ce7f5764a12c5485710474fb1f")),
             0,
             0,
             0
